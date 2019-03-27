@@ -13,14 +13,22 @@ public class Client {
     public static void main(String[] args) {
         Laiteosa verkko = new Verkkokortti("verkkis", 50);
         Laiteosa kotelo = new Kotelo("paketti", 400);
-        kotelo.lisaaOsa(new Prosessori("prossu", 200));
-        kotelo.lisaaOsa(new Muistipiiri("muisti", 100));
-        kotelo.lisaaOsa(verkko);
-        kotelo.printList();
-        System.out.println("Paketin yhteishinta koteloineen on " + kotelo.getHinta());
+        Laiteosa prossu = new Prosessori("prossu", 100);
+        Laiteosa emo = new Emolevy("emolevy", 150);
+        Laiteosa muisti = new Muistipiiri("muisti", 100);
+        Laiteosa naytonohjain = new Naytonohjain("näyttis", 300);
+        
+        emo.lisaaOsa(verkko);
+        emo.lisaaOsa(prossu);
+        emo.lisaaOsa(muisti);
+        emo.lisaaOsa(naytonohjain);
+        kotelo.lisaaOsa(emo);
+        
+        
+        System.out.println("Komponenttien hinta:  " + emo.getHinta());
         System.out.println("");
-        kotelo.poistaOsa(verkko);
-        kotelo.printList();
+        
+        
         System.out.println("Paketin yhteishinta koteloineen on: " + kotelo.getHinta());
     }
     

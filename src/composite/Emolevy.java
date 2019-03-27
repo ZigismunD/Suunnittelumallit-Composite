@@ -44,12 +44,12 @@ public class Emolevy implements Laiteosa {
 
     @Override
     public void lisaaOsa(Laiteosa lo) {
-        // Not supported in leaf
+        lista.add(lo);
     }
 
     @Override
     public void poistaOsa(Laiteosa lo) {
-        // Not supported in leaf
+        lista.remove(lo);
     }
 
     @Override

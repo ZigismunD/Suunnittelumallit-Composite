@@ -12,6 +12,11 @@ package composite;
 public class Naytonohjain implements Laiteosa {
     private String nimi;
     private int hinta;
+    
+    public Naytonohjain(String nimi, int hinta) {
+        this.nimi = nimi;
+        this.hinta = hinta;
+    }
 
     @Override
     public String getNimi() {
